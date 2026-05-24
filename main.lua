@@ -126,7 +126,7 @@ createButton("Bomb Tracker", colorOrange, function(state)
         RunService.Heartbeat:Connect(function()
             if not state then return end
             for _, v in pairs(game.Workspace:GetDescendants()) do
-                if (v.Name == "Bomb" or v:IsA("Tool") and v.Name:find("Bomb")) and not bombFolder:FindFirstChild(v.Name) then
+                if (v.Name:find("Bomb") or v:IsA("Tool") and v.Name:find("Bomb")) and not bombFolder:FindFirstChild(v.Name) then
                     local highlight = Instance.new("Highlight", bombFolder)
                     highlight.Name = v.Name
                     highlight.Adornee = v
